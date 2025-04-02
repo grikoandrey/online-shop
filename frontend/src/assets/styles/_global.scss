@@ -1,3 +1,5 @@
+@import "variables";
+
 * {
   margin: 0;
   padding: 0;
@@ -11,4 +13,44 @@ html, body {
 .container {
   max-width: $container-width;
   margin: 0 auto;
+}
+
+.input {
+  box-sizing: border-box;
+  padding: 17px 20px;
+  border: 2px solid #2A592E;
+  border-radius: 3px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: $grey-text-color;
+}
+
+.button {
+  text-align: center;
+  padding: 15px;
+  background: #456F49;
+  border-radius: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #FFFFFF;
+
+  &:disabled {
+    background: #b6edbc;
+    cursor: not-allowed;
+  }
+}
+
+.mat-menu-item {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+
+  a {
+    text-decoration: none;
+    color: $grey-text-color;
+  }
 }
