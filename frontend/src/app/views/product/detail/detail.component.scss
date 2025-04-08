@@ -1,0 +1,112 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+
+.detail {
+  padding: 101px 0 110px 0;
+
+  .container {
+    .detail-title {
+      @include head-lora-36;
+    }
+
+    .detail-product {
+      margin: 30px 0 120px 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 107px;
+
+      .detail-image {
+        width: 528px;
+        height: 528px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+      }
+
+      .detail-info {
+        width: 602px;
+
+        .detail-info-items {
+          margin-bottom: 51px;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          .detail-info-line {
+            border: 1px solid #E7F1E8;
+          }
+
+          .detail-info-item {
+            display: flex;
+            gap: 25px;
+
+            .detail-info-item-text {
+              color: $green-text-color;
+
+              .detail-info-item-title {
+                font-size: 20px;
+                font-weight: 500;
+                margin-bottom: 15px;
+              }
+
+              .detail-info-item-description {
+                line-height: 130%;
+              }
+            }
+          }
+        }
+
+        .detail-info-param {
+          display: flex;
+          gap: 10px;
+          margin-bottom: 12px;
+
+          .detail-info-param-name {
+            font-weight: 500;
+          }
+        }
+
+        .detail-info-params {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: -2px;
+          margin-bottom: 22px;
+
+          .detail-info-params-count {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            span {
+              font-weight: 500;
+            }
+          }
+
+          .detail-info-params-price {
+            font-size: 40px;
+            font-weight: 700;
+            color: #313131;
+          }
+        }
+
+        .detail-info-actions {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          .button {
+            width: 290px;
+
+            &.button-transparent {
+              width: 307px;
+            }
+          }
+        }
+      }
+    }
+
+    .recommended-products {
+    }
+  }
+}
