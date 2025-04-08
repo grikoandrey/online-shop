@@ -27,14 +27,15 @@ header.header {
           li {
             border-bottom: 1px solid transparent;
 
-            &.active {
-              border-bottom-color: $green-text-color;
-            }
-
             a {
               font-size: 16px;
               color: $green-text-color;
               cursor: pointer;
+              text-decoration: none;
+
+              &.active {
+                border-bottom: 1px solid $green-text-color;
+              }
             }
           }
         }
@@ -95,14 +96,15 @@ header.header {
           li {
             border-bottom: 1px solid transparent;
 
-            &.active {
-              border-bottom-color: $green-text-color;
-            }
-
             a {
               font-size: 16px;
               color: $green-text-color;
               cursor: pointer;
+              text-decoration: none;
+
+              &.active {
+                border-bottom: 1px solid $green-text-color;
+              }
             }
           }
         }
