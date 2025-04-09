@@ -41,7 +41,7 @@
         <category-filter [type]="'height'"></category-filter>
       </div>
       <div class="catalog-products">
-        <product-card *ngFor="let product of products" [product]="product"></product-card>
+        <product-card [countInCart]="product.countInCart" *ngFor="let product of products" [product]="product"></product-card>
         <div class="catalog-empty" *ngIf="products.length === 0">
           <p>К сожалению, по выбранным фильтрам ничего не найдено.</p>
           <a routerLink="/catalog">Попробуйте изменить параметры фильтрации.</a>

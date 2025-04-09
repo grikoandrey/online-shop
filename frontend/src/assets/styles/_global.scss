@@ -76,6 +76,15 @@ ul, li, a {
 
     &:hover {
       background-color: #dfeae0;
+
+      &.button-in-cart span {
+        &:first-child {
+          display: none;
+        }
+        &:last-child {
+          display: block;
+        }
+      }
     }
   }
 
@@ -84,6 +93,15 @@ ul, li, a {
     justify-content: center;
     gap: 16px;
     align-items: center;
+  }
+
+  &.button-in-cart span {
+    &:first-child {
+      display: block;
+    }
+    &:last-child {
+      display: none;
+    }
   }
 }
 

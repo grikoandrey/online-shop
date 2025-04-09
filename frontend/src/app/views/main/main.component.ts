@@ -107,6 +107,6 @@ export class MainComponent implements OnInit {
       .subscribe((data: ProductType[]) => {
         this.products = data;
       })
-  }
+  };
 
 }
