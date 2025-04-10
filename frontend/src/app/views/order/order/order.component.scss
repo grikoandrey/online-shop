@@ -1,0 +1,202 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+
+.order {
+  padding: 86px 0 107px 0;
+
+  .container {
+    .order-title {
+      @include head-lora-36;
+      margin-bottom: 30px;
+    }
+
+    .order-info {
+      display: flex;
+      justify-content: space-between;
+
+      .order-form {
+        max-width: 645px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        .order-form-block {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          .order-form-label {
+            font-weight: 500;
+            color: $green-text-color;
+          }
+
+          .order-form-types {
+            display: flex;
+            align-items: center;
+            max-width: 340px;
+            box-sizing: border-box;
+            border: 1px solid #519057;
+            border-radius: 3px;
+
+            .order-form-type-item {
+              font-size: 18px;
+              padding: 13px 35px;
+              color: $grey-text-color;
+              background-color: transparent;
+              cursor: pointer;
+
+              &.active {
+                color: #FFFFFF;
+                background-color: #519057;
+              }
+            }
+          }
+
+          .order-form-inputs {
+            display: grid;
+            gap: 8px;
+
+            .input[type=text] {
+              height: 53px;
+              padding-left: 20px;
+
+              &::placeholder {
+                font-size: 14px;
+                color: #A8ABA7;
+              }
+            }
+
+            &.personal-data-inputs {
+              grid-template-columns: repeat(3, 210px);
+            }
+
+            &.address-inputs {
+              grid-template-columns: repeat(2, 125px) 162px;
+              grid-template-rows: 1fr 1fr;
+              grid-template-areas:
+                "street street street"
+                "house entrance flat";
+
+              .street {
+                grid-area: street;
+              }
+
+              .house {
+                grid-area: house;
+              }
+
+              .entrance {
+                grid-area: entrance;
+              }
+
+              .flat {
+                grid-area: flat;
+              }
+            }
+          }
+
+          .order-form-radio {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            .order-form-radio-block {
+              display: flex;
+              gap: 12px;
+
+              label {
+                color: $grey-text-color;
+              }
+
+              input:checked + label {
+                font-weight: 500;
+              }
+            }
+          }
+        }
+      }
+
+      .order-details {
+        width: 422px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+
+        .order-details-info {
+          padding: 40px;
+          border-radius: 5px;
+          background-color: #E7F1E8;
+
+          .order-details-info-title {
+            font-family: 'Lora', sans-serif;
+            font-weight: 400;
+            font-size: 26px;
+            color: $green-text-color;
+            margin-bottom: 20px;
+          }
+
+          .order-details-info-count {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .order-details-info-item {
+              display: flex;
+              gap: 12px;
+              align-items: center;
+              color: $grey-text-color;
+
+              .order-details-info-item-text {
+              }
+
+              .order-details-info-item-data {
+                font-weight: 500;
+                font-size: 20px;
+              }
+
+              &.item-total {
+                font-weight: 600;
+
+                .order-details-info-item-data {
+                  font-weight: 600;
+                }
+              }
+            }
+          }
+
+        }
+
+        .order-details-actions .button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.order-popup {
+  padding: 100px 70px 219px 70px;
+  position: relative;
+  text-align: center;
+  color: $green-text-color;
+  background-image: url("../../../../assets/images/page/popup-img.png");
+  background-position: bottom center;
+  background-repeat: no-repeat;
+
+  .order-popup-close {
+    position: absolute;
+    cursor: pointer;
+    top: 30px;
+    right: 30px;
+  }
+
+  .order-popup-title {
+    @include head-lora-32;
+    margin-bottom: 40px;
+  }
+
+  .order-popup-content p {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+}
