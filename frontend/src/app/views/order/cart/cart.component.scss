@@ -2,11 +2,12 @@
 @import "../../../../assets/styles/mixins";
 
 .cart {
-  padding: 50px 110px;
+  padding: 50px 0 110px 0;
 
   .container {
     .cart-title {
       @include head-lora-36;
+      color: $green-text-color;
       margin-bottom: 35px;
     }
 

@@ -54,6 +54,16 @@ export class AuthService {
     this.isLogged$.next(true);
   }
 
+  public refreshToken(): Observable<DefaultResponseType | LoginResponseType> {
+    const tokens = this.getTokens();
+    if (tokens && tokens.refreshToken) {
+      return this.http.post<DefaultResponseType | LoginResponseType>(`${environment.api}refreshToken`, {
+        refreshToken: tokens.refreshToken
+      })
+    }
+    throw throwError(() => 'Токен не может быть использован!');
+  }
+
   public removeTokens(): void {
     localStorage.removeItem(this.accessTokenKey);
     localStorage.removeItem(this.refreshTokenKey);
