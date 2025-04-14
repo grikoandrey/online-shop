@@ -68,11 +68,17 @@
           font-weight: 600;
           color: $grey-text-color;
           width: 100px;
-          margin-right: 193px;
+          margin-right: 163px;
         }
 
-        .favorite-product-actions button {
-          width: 160px;
+        .favorite-product-actions {
+          display: flex;
+          align-items: center;
+          gap: 30px;
+
+          button {
+            width: 120px;
+          }
         }
 
         .favorite-product-remove {
