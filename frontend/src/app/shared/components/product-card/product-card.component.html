@@ -1,6 +1,6 @@
 <div class="product-card" *ngIf="product" (click)="navigate()"
      [class.is-light]="isLight">
-  <div class="product-card-favorite" *ngIf="!isLight" (click)="updateFavorite()">
+  <div class="product-card-favorite" *ngIf="isLogged" (click)="updateFavorite()">
     <span *ngIf="!product.isInFavorite">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -19,7 +19,8 @@
               </svg>
         </span>
   </div>
-  <div class="product-card-image" [style.background-image]="'url(' + serverStaticPath + product.image + ')'"></div>
+  <div class="product-card-image"
+       [style.background-image]="'url(' + serverStaticPath + product.image + ')'"></div>
   <div class="product-card-name">{{ product.name }}</div>
   <div class="product-card-info" *ngIf="!isLight">
     <div class="product-card-price">{{ product.price }} BYN</div>

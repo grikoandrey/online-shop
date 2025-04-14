@@ -10,6 +10,7 @@
         <div class="cart-help" *ngFor="let cartProduct of cart.items; let i = index; let last = last">
           <div class="cart-product">
             <div class="cart-product-image"
+                 routerLink="/product/{{cartProduct.product.url}}"
                  [ngStyle]="{ 'background-image': 'url(' + serverStaticPath + cartProduct.product.image + ')' }">
             </div>
             <div class="cart-product-name">{{ cartProduct.product.name }}</div>

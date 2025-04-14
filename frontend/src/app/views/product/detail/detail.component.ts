@@ -23,6 +23,8 @@ export class DetailComponent implements OnInit {
   product!: ProductType;
   serverStaticPath: string = environment.serverStaticPath;
 
+  isLogged: boolean = false;
+
   count: number = 1;
 
   customOptions: OwlOptions = {
@@ -57,9 +59,11 @@ export class DetailComponent implements OnInit {
               private authService: AuthService,
               private _snackBar: MatSnackBar,
               private favoriteService: FavoriteService) {
+    this.isLogged = this.authService.getIsLoggedIn();
   }
 
   ngOnInit(): void {
+
     this.activatedRoute.params.subscribe(params => {
       this.productService.getProduct(params['url'])
         .subscribe((data: ProductType) => {
@@ -83,7 +87,7 @@ export class DetailComponent implements OnInit {
           //здесь можно добавить, что в случае отсутствия данных о товаре, мы переводим пользователя на страницу
           // 404, что является лучшей и безопасной практикой.
 
-          if (!this.authService.getIsLoggedIn()) {
+          if (this.authService.getIsLoggedIn()) {
             this.favoriteService.getFavorites()
               .subscribe((data: FavoriteType[] | DefaultResponseType) => {
                 if ((data as DefaultResponseType).error !== undefined) {

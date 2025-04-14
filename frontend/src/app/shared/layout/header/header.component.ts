@@ -1,7 +1,7 @@
 import {Component, HostListener, Input, OnInit} from '@angular/core';
 import {AuthService} from "../../../core/auth/auth.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {Router} from "@angular/router";
+import {NavigationEnd, Router} from "@angular/router";
 import {CategoryWithTypeType} from "../../../../types/category-with-type.type";
 import {CartService} from "../../services/cart.service";
 import {DefaultResponseType} from "../../../../types/default-response.type";
@@ -9,7 +9,7 @@ import {ProductService} from "../../services/product.service";
 import {ProductType} from "../../../../types/product.type";
 import {environment} from "../../../../environments/environment";
 import {FormControl} from "@angular/forms";
-import {debounceTime} from "rxjs";
+import {debounceTime, filter} from "rxjs";
 
 @Component({
   selector: 'app-header',
@@ -17,6 +17,8 @@ import {debounceTime} from "rxjs";
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+
+  activeFragment: string = '';
 
   // searchValue: string = '';
   products: ProductType[] = [];
@@ -41,6 +43,13 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        const tree = this.router.parseUrl(this.router.url);
+        this.activeFragment = tree.fragment || '';
+      });
 
     this.searchField.valueChanges
       .pipe(
@@ -73,6 +82,10 @@ export class HeaderComponent implements OnInit {
     this.cartService.count$.subscribe((count: number): void => {
       this.count = count;
     })
+  }
+
+  isRouteActive(route: string): boolean {
+    return this.router.url.includes(route);
   }
 
   logout(): void {

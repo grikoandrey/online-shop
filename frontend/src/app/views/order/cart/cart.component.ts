@@ -75,7 +75,6 @@ export class CartComponent implements OnInit {
         this.totalCount += item.quantity;
       })
     }
-    // this.cartService.setTotalCount(this.totalCount);
   };
 
   updateCount(id: string, count: number): void {
@@ -89,5 +88,5 @@ export class CartComponent implements OnInit {
           this.calculateTotal();
         })
     }
-  }
+  };
 }
