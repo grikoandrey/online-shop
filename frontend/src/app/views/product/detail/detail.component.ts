@@ -23,9 +23,9 @@ export class DetailComponent implements OnInit {
   product!: ProductType;
   serverStaticPath: string = environment.serverStaticPath;
 
-  isLogged: boolean = false;
+  isLogged = false;
 
-  count: number = 1;
+  count = 1;
 
   customOptions: OwlOptions = {
     loop: true,

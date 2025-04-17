@@ -1,7 +1,7 @@
 import {DeliveryType} from "./delivery.type";
 import {PaymentType} from "./payment.type";
 
-export type UserInfoType = {
+export interface UserInfoType {
   deliveryType?: DeliveryType,
   firstName?: string,
   lastName?: string,

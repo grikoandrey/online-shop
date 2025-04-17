@@ -1,4 +1,4 @@
-export type FavoriteType = {
+export interface FavoriteType {
   id: string,
   name: string,
   price: number,

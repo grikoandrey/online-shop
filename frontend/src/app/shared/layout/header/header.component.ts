@@ -18,18 +18,18 @@ import {debounceTime, filter} from "rxjs";
 })
 export class HeaderComponent implements OnInit {
 
-  activeFragment: string = '';
+  activeFragment = '';
 
   // searchValue: string = '';
   products: ProductType[] = [];
 
   serverStaticPath: string = environment.serverStaticPath;
 
-  isLogged: boolean = false;
-  count: number = 0;
+  isLogged = false;
+  count = 0;
   @Input() categories: CategoryWithTypeType[] = [];
 
-  showedSearch: boolean = false;
+  showedSearch = false;
 
   searchField = new FormControl();
 

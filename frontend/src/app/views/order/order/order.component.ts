@@ -24,8 +24,8 @@ import {AuthService} from "../../../core/auth/auth.service";
 export class OrderComponent implements OnInit {
 
   cart: CartType | null = null;
-  totalAmount: number = 0;
-  totalCount: number = 0;
+  totalAmount = 0;
+  totalCount = 0;
   totalDelivery: number = config.deliveryAmount;
 
   deliveryType: DeliveryType = DeliveryType.delivery;

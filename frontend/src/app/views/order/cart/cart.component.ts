@@ -17,8 +17,8 @@ export class CartComponent implements OnInit {
   extraProducts: ProductType[] = [];
   cart: CartType | null = null;
   serverStaticPath: string = environment.serverStaticPath;
-  totalAmount: number = 0;
-  totalCount: number = 0;
+  totalAmount = 0;
+  totalCount = 0;
 
   customOptions: OwlOptions = {
     loop: true,

@@ -20,13 +20,13 @@ export class ProductCardComponent implements OnInit {
   @Input() product!: ProductType;
 
   serverStaticPath: string = environment.serverStaticPath;
-  count: number = 1;
+  count = 1;
 
-  @Input() isLight: boolean = false;
+  @Input() isLight = false;
   // isInCart: boolean = false;
   @Input() countInCart: number | undefined= 0;
 
-  isLogged: boolean = false;
+  isLogged = false;
 
   constructor(private cartService: CartService,
               private authService: AuthService,

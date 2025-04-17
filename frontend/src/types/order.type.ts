@@ -2,7 +2,7 @@ import {DeliveryType} from "./delivery.type";
 import {PaymentType} from "./payment.type";
 import {OrderStatusType} from "./order-status.type";
 
-export type OrderType = {
+export interface OrderType {
   deliveryType: DeliveryType,
   firstName: string,
   lastName: string,

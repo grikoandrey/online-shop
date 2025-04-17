@@ -1,4 +1,4 @@
-export type TypeType = {
+export interface TypeType {
   id: string,
   name: string,
   category: {

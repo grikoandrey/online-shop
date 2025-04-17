@@ -17,7 +17,7 @@ export class FavoriteComponent implements OnInit {
   products: FavoriteType[] = [];
   serverStaticPath: string = environment.serverStaticPath;
 
-  count: number = 1;
+  count = 1;
   product!: ProductType;
 
   constructor(private favoriteService: FavoriteService,

@@ -27,7 +27,7 @@ export class CatalogComponent implements OnInit {
   categoriesWithTypes: CategoryWithTypeType[] = [];
   activeParams: ActiveParamsType = {types: []};
   appliedFilters: appliedFilterType[] = [];
-  sortingOpen: boolean = false;
+  sortingOpen = false;
 
   sortingOptions: { name: string, value: string | null }[] = [
     {name: 'От А до Я', value: 'az-asc'},

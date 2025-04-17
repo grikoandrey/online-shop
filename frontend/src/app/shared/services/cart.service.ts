@@ -17,7 +17,7 @@ export class CartService {
   //   this.totalCountSource.next(count);
   // }
 
-  private count: number = 0;
+  private count = 0;
   count$: Subject<number> = new Subject<number>();
 
   constructor(private http: HttpClient,) {

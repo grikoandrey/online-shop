@@ -14,7 +14,7 @@ export class CategoryFilterComponent implements OnInit {
 
   @Input() categoryWithTypes: CategoryWithTypeType | null = null;
   @Input() type: string | null = null;
-  open: boolean = false;
+  open = false;
   activeParams: ActiveParamsType = {types: []};
 
   from: number | null = null;
